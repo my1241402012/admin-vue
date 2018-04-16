@@ -4,6 +4,7 @@ import Login from '@/components/login/login'
 import Home from '@/components/home/home'
 import UserList from '@/components/user-list/user-list'
 import RoleList from '@/components/role-list/role-list'
+import {getUserInfo} from '@/assets/js/auth'
 
 Vue.use(Router)
 
@@ -39,8 +40,7 @@ router.beforeEach((to, from, next) => {
   if (to.name === 'login') {
     next()
   } else {
-    const token = window.localStorage.getItem('admin-token')
-    if (!token) {
+    if (!getUserInfo()) {
       next({
         name: 'login'
       })
