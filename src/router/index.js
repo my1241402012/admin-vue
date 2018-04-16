@@ -5,6 +5,7 @@ import Home from '@/components/home/home'
 import UserList from '@/components/user-list/user-list'
 import RoleList from '@/components/role-list/role-list'
 import {getUserInfo} from '@/assets/js/auth'
+import RightsList from '@/components/rights-list/rights-list'
 
 Vue.use(Router)
 
@@ -27,8 +28,13 @@ const router = new Router({
         },
         {
           name: 'role-list',
-          path: 'roles',
+          path: '/roles',
           component: RoleList
+        },
+        {
+          name: 'rights-list',
+          path: '/rights',
+          component: RightsList
         }
       ]
     }
